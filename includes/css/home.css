@@ -12,3 +12,7 @@ and open the template in the editor.
     .widget-header h3 {margin-left: 10px;}
 
 .widget-content {border-left: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black;padding: 0 10px 10px 10px;}
+
+.lbLogar {
+    font-size: 16px;
+}
