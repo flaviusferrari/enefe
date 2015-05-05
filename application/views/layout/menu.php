@@ -39,4 +39,4 @@
             </ul>            
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
-</nav></nav>
+</nav>
