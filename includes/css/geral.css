@@ -37,3 +37,6 @@ footer {border-top: 1px solid #555;}
 .twhite {color: white;}
 .tred {color: red;}
 
+.sessao {background-color: #ccc;border:1px solid #555;}
+    .sessao span {font-size: 20px;font-weight: bold;}
+
