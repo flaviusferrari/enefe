@@ -1,7 +1,7 @@
 <?php 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Usuarios extends CI_Controller
+class Usuarios extends MY_Controller
 {
     protected $dados;
 

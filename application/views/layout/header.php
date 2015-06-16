@@ -39,10 +39,10 @@
                     <!-- LOGIN -->
                     <div id="login" class="col-md-2">
                         <div class="lbLogar">Logar</div>
-                        <form class="form" role="form">
+                        <form class="form" method="post" role="form" action="login/logar">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="" placeholder="Entre com seu email">
-                                <input type="password" class="form-control" id="" placeholder="Entre com a senha">
+                                <input type="text" name="email" class="form-control" placeholder="Entre com seu email">
+                                <input type="password" name="pass" class="form-control" placeholder="Entre com a senha">
                             </div>
                             <button type="submit" class="btn btn-info btn-xs">Logar</button>
                         </form>

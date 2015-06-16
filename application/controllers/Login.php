@@ -7,8 +7,7 @@ class Login extends CI_Controller
 {
 
     public function index()
-    {
-        
+    {        
         $this->load->view('v_login');
     }
 
@@ -22,10 +21,10 @@ class Login extends CI_Controller
     public function logar()
     {
         // Recebe Usuário e Senha
-        $usuario = $this->input->post("usuario");
-        $senha   = md5($this->input->post("senha"));
+        $usuario = $this->input->post("email");
+        $senha   = md5($this->input->post("pass"));
         
-        $sql = "SELECT Login, Senha FROM usuarios WHERE Login = '$usuario'";
+        $sql = "SELECT * FROM usuarios WHERE email = '$usuario'";
         
         $query = $this->db->query($sql);
         
@@ -33,14 +32,15 @@ class Login extends CI_Controller
         
         //Se o usuário e senha combinarem, então basta eu redirecionar para a url base, pois agora o usuário irá passa
         //pela verificação que checa se ele está logado.
-        if ($usuario == $user['Login'] && $senha == $user['Senha'])
+        if ($usuario == $user['email'] && $senha == $user['senha'])
         {
             $this->session->set_userdata("logado", 1);
-            redirect(base_url());
-        } else
+            redirect(base_url('administrativo'));
+        }
+        else
         {
             //caso a senha/usuário estejam incorretos, então mando o usuário novamente para a tela de login com uma mensagem de erro.
-            $dados['erro'] = "Usuário/Senha incorretos";
+            $dados['erro'] = $sql;
             $this->load->view("v_login", $dados);
         }
     }
