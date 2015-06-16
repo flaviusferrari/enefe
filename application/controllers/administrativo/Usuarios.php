@@ -25,7 +25,7 @@ class Usuarios extends MY_Controller
     public function index()
     {        
         // Exibe a página de Cadastro
-        $this->load->view('layout', $this->dados);
+        $this->load->view('administrativo', $this->dados);
     }
     
     
