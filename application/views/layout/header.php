@@ -45,6 +45,8 @@
                                 <a title="Clique para exibir os dados" class="link_user">
                                 <?php echo $this->session->userdata('nome'); ?>
                             </a>
+                            <br>
+                            <a href="login/logout" class="btn btn-info btn-xs">Sair</a>
                         </div>
                     <?php else: ?>
                         <div id="login" class="col-md-2">
