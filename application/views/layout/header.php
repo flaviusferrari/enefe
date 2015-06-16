@@ -37,16 +37,27 @@
                     </div>
                     
                     <!-- LOGIN -->
-                    <div id="login" class="col-md-2">
-                        <div class="lbLogar">Logar</div>
-                        <form class="form" method="post" role="form" action="login/logar">
-                            <div class="form-group">
-                                <input type="text" name="email" class="form-control" placeholder="Entre com seu email">
-                                <input type="password" name="pass" class="form-control" placeholder="Entre com a senha">
-                            </div>
-                            <button type="submit" class="btn btn-info btn-xs">Logar</button>
-                        </form>
-                    </div>
+                    <?php if($this->session->userdata("logado") == 1): ?>
+                        <div id="login" class="col-md-2">
+                            <font class="txtBem white">
+                            Bem Vindo,</font>
+                            <br>
+                                <a title="Clique para exibir os dados" class="link_user">
+                                <?php echo $this->session->userdata('nome'); ?>
+                            </a>
+                        </div>
+                    <?php else: ?>
+                        <div id="login" class="col-md-2">
+                            <div class="lbLogar">Logar</div>
+                            <form class="form" method="post" role="form" action="login/logar">
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Entre com seu email">
+                                    <input type="password" name="pass" class="form-control" placeholder="Entre com a senha">
+                                </div>
+                                <button type="submit" class="btn btn-info btn-xs">Logar</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

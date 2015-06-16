@@ -35,6 +35,7 @@ class Login extends CI_Controller
         if ($usuario == $user['email'] && $senha == $user['senha'])
         {
             $this->session->set_userdata("logado", 1);
+            $this->session->set_userdata('nome', $user['nome']);
             redirect(base_url('administrativo'));
         }
         else
