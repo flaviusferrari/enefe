@@ -10,14 +10,17 @@ class Usuarios extends MY_Controller
     {
         parent::__construct();
         
+        // BIBLIOTECAS
+        $this->load->library('form_validation');
+        $this->load->library('estados');
+        
+        // DADOS
         $this->dados['css'] = 'usuarios'; 
         $this->dados['js']  = 'usuarios';
-        $this->dados['conteudo'] = 'cadastros/cad_usuarios';        
-        
-        // Carrega a validação dos formulários
-        $this->load->library('form_validation');
-        
-        // Carrega o Model
+        $this->dados['conteudo'] = 'cadastros/cad_usuarios';  
+        $this->dados['uf'] = $this->estados->getEstados();
+                
+        // MODEL
         //$this->load->model('clientespf_model');
     }    
     
