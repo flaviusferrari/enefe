@@ -1,8 +1,30 @@
-<?php
+<?php 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class Home extends MY_Controller
+{
+    protected $dados;
 
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->dados['css'] = 'administrativo'; 
+        $this->dados['js']  = 'administrativo';
+        $this->dados['conteudo'] = 'administrativo/home';        
+        
+        // Carrega a validação dos formulários
+        $this->load->library('form_validation');
+        
+        // Carrega o Model
+        //$this->load->model('clientespf_model');
+    }    
+    
+    
+    public function index()
+    {        
+        // Exibe a página de Cadastro
+        $this->load->view('layout', $this->dados);
+    }   
+    
+}
